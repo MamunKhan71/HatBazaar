@@ -32,11 +32,15 @@ export default function HomePage() {
             setFilteredProducts(filtered)
         }
     }
-    const filterBy = (type) => {
-        console.log(type);
+    const filterBy = (type, sortType) => {
         if (type === "price") {
-            const sortedProducts = [...filteredProducts].sort((a, b) => a.price - b.price)
-            setFilteredProducts(sortedProducts)
+            if (sortType === 'htl') {
+                const sortedProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+                setFilteredProducts(sortedProducts);
+            } else if (sortType === 'lth') {
+                const sortedProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+                setFilteredProducts(sortedProducts);
+            }
         } else {
             const sortedProducts = [...filteredProducts].sort((a, b) => new Date(a.creationDateTime) - new Date(b.creationDateTime))
             setFilteredProducts(sortedProducts)
@@ -58,14 +62,15 @@ export default function HomePage() {
     return (
         <div className='space-y-4'>
             <h1 className='text-center font-bold text-3xl'>Products</h1>
-            <div className='w-full flex justify-end'>
+            <div className='w-full flex justify-end items-center'>
                 <details className="dropdown dropdown-end">
                     <summary className="btn m-1 rounded-none"><RxDropdownMenu /> Sort by</summary>
                     <ul className="menu dropdown-content bg-base-100 z-[1] w-52 p-2 rounded-none shadow font-semibold">
-                        <li><button onClick={() => filterBy('price')}><MdOutlineAttachMoney />Price</button></li>
-                        <li><button onClick={() => filterBy('date')}><TbCalendarCode />Date Added</button></li>
+                        <li><button onClick={() => filterBy('price', 'htl')}><MdOutlineAttachMoney />High to Low</button></li>
+                        <li><button onClick={() => filterBy('date', 'lth')}><TbCalendarCode />Low to High</button></li>
                     </ul>
                 </details>
+                <button className='btn rounded-none' onClick={() => filterBy('date')}><TbCalendarCode />Date Added</button>
             </div>
             <div className='flex gap-5 pt-12'>
                 <div className='w-96 p-4 space-y-4'>
