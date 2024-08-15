@@ -1,22 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
 export default function Login() {
     const [passStatus, setPassStatus] = useState(false)
     const [logStatus, setLogStatus] = useState('')
+    const { emailPassLogin, githubAuthentication, googleAuthentication } = useContext(AuthContext)
     const {
         register,
         handleSubmit
     } = useForm()
     const handleGithubSignIn = () => {
-        console.log("H");
+        githubAuthentication()
+            .then(res => console.log(res))
     }
     const handleGoogleSignIn = () => {
-        console.log("H");
+        googleAuthentication()
+            .then(res => console.log(res))
     }
     const handleEmailLogin = (data) => {
-
+        const { email, password } = data
+        emailPassLogin(email, password)
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
     }
     return (
         <div className='flex items-center justify-center h-full w-full '>

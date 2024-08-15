@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 // import { AuthContext } from "../provider/AuthProvider";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { AuthContext } from '../../provider/AuthProvider';
 // import { toast } from 'react-toastify';
 // import { Helmet } from "react-helmet";
 export default function Register() {
@@ -11,6 +12,8 @@ export default function Register() {
     const [passInfo, setPassInfo] = useState(null)
     const [passStatus, setPassStatus] = useState(false)
     const [focus, setTheFocus] = useState(false)
+    const { createUser, githubAuthentication, googleAuthentication } = useContext(AuthContext)
+
     const {
         register,
         handleSubmit,
@@ -18,14 +21,19 @@ export default function Register() {
         formState: { errors },
     } = useForm();
 
-    const handleGithubSignUp  = () => {
-        console.log("H");
+    const handleGithubSignUp = () => {
+        githubAuthentication()
+            .then(res => console.log(res))
     }
     const handleGoogleSignUp = () => {
-        console.log("H");
+        googleAuthentication()
+            .then(res => console.log(res))
     }
     const handleCreateUser = (data) => {
-        console.log("H");
+        const { name, email, photoUrl, password } = data
+        createUser(email, password)
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
     }
     return (
         <div>
