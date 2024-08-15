@@ -1,6 +1,6 @@
 [
     {
-        "productName": "Wireless Bluetooth Headphones",
+        "productName": "Wireless Headphones",
         "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/jcbmcjasqn5awee5om6q.jpg",
         "description": "High-quality wireless Bluetooth headphones with noise-canceling feature and long battery life.",
         "price": 79.99,
@@ -9,7 +9,7 @@
         "creationDateTime": "2024-08-15T10:30:00Z"
     },
     {
-        "productName": "Stainless Steel Water Bottle",
+        "productName": "Stainless Water Bottle",
         "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692567/ElectronicProducts/rci1f5yuwzv4kc57n9wh.jpg",
         "description": "Durable stainless steel water bottle with a leak-proof cap and double-wall insulation.",
         "price": 19.99,
@@ -21,7 +21,7 @@
         "productName": "Laptop Table",
         "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/qpzfgfmj9cvmykme6sy7.jpg",
         "description": "Elegant wooden laptop table with a modern design, perfect for any dining room.",
-        "price": 499.99,
+        "price": 99.99,
         "category": "Furniture",
         "ratings": 4.8,
         "creationDateTime": "2024-08-10T09:15:00Z"
