@@ -17,38 +17,39 @@ export default function HomePage() {
     const handleBrandClick = (e) => {
         const { value, checked } = e.target;
         let updatedSelectedBrands = [];
+        
         if (checked) {
-            updatedSelectedBrands = [...selectedBrands, value]
+            updatedSelectedBrands = [...selectedBrands, value];
         } else {
             updatedSelectedBrands = selectedBrands.filter((brand) => brand !== value);
         }
+        
         setSelectedBrands(updatedSelectedBrands);
-
-        if (updatedSelectedBrands.length === 0) {
-            setFilteredProducts(products)
-        } else {
-            const filtered = products.filter((product) =>
-                updatedSelectedBrands.includes(product.brandName)
-            );
-            setFilteredProducts(filtered)
-        }
-    }
+        filterProducts(updatedSelectedBrands, selectedCategory);
+    };
+    
     const handleCategoryClick = (e) => {
-        const { value, checked } = e.target
-        let updatedCategory = []
+        const { value, checked } = e.target;
+        let updatedCategory = [];
+        
         if (checked) {
-            updatedCategory = [...selectedCategory, value]
+            updatedCategory = [...selectedCategory, value];
         } else {
-            updatedCategory = selectedCategory.filter(category => category !== value)
+            updatedCategory = selectedCategory.filter(category => category !== value);
         }
-        setSelectedCategory(updatedCategory)
-        if (updatedCategory.length === 0) {
-            setFilteredProducts(products)
-        } else {
-            const filtered = filteredProducts.filter(product => updatedCategory.includes(product.category))
-            setFilteredProducts(filtered)
-        }
-    }
+        
+        setSelectedCategory(updatedCategory);
+        filterProducts(selectedBrands, updatedCategory);
+    };
+    
+    const filterProducts = (brands, categories) => {
+        const filtered = products.filter(product =>
+            (brands.length === 0 || brands.includes(product.brandName)) &&
+            (categories.length === 0 || categories.includes(product.category))
+        );
+        
+        setFilteredProducts(filtered);
+    };
     console.log(selectedCategory);
     const filterBy = (type, sortType) => {
         if (type === "price") {
