@@ -8,7 +8,9 @@ export default function MainLayout() {
         <div className='space-y-48'>
             <div className='container mx-auto font-inter'>
                 <Navbar />
-                <Outlet />
+                <div className='min-h-screen w-full'>
+                    <Outlet />
+                </div>
             </div>
             <Footer />
         </div>

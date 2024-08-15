@@ -35,6 +35,19 @@ export default function HomePage() {
             <div className='flex gap-5 pt-12'>
                 <div className='w-96 p-4 space-y-4'>
                     <h1 className='inline-flex gap-2 items-center font-semibold '><BiFilter />Filter by</h1>
+                    <div className='bg-gray-50 p-4 space-y-2'>
+                        <p className='inline-flex gap-2 items-center font-semibold'><MdOutlineAttachMoney />Price</p>
+                        <div>
+                            <input type="range" min={0} max="100" value="25" className="range range-xs" step="50" />
+                            <div className="flex w-full justify-between px-2 text-xs">
+                                <span>|</span>
+                                <span>|</span>
+                                <span>|</span>
+                                <span>|</span>
+                                <span>|</span>
+                            </div>
+                        </div>
+                    </div>
                     <hr />
                     <div className='bg-gray-50 p-4 space-y-2'>
                         <p className='inline-flex gap-2 items-center font-semibold'><BiCategoryAlt />Category</p>
@@ -58,23 +71,7 @@ export default function HomePage() {
                             <ul className='space-y-2'>
                                 {
                                     brands?.map(brand => (
-                                        <li className='flex items-center gap-2'>
-                                            <input type="checkbox" className="checkbox" />
-                                            <span className="label-text">{brand}</span>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                    <hr />
-                    <div className='bg-gray-50 p-4 space-y-2'>
-                        <p className='inline-flex gap-2 items-center font-semibold'><TbBrandAbstract />Price</p>
-                        <div>
-                            <ul className='space-y-2'>
-                                {
-                                    brands?.map(brand => (
-                                        <li className='flex items-center gap-2'>
+                                        <li className='flex items-center gap-2 font-medium'>
                                             <input type="checkbox" className="checkbox" />
                                             <span className="label-text">{brand}</span>
                                         </li>
