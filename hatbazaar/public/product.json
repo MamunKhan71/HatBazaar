@@ -1,0 +1,362 @@
+[
+    {
+        "productName": "Wireless Bluetooth Headphones",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/jcbmcjasqn5awee5om6q.jpg",
+        "description": "High-quality wireless Bluetooth headphones with noise-canceling feature and long battery life.",
+        "price": 79.99,
+        "category": "Electronics",
+        "ratings": 4.5,
+        "creationDateTime": "2024-08-15T10:30:00Z"
+    },
+    {
+        "productName": "Stainless Steel Water Bottle",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692567/ElectronicProducts/rci1f5yuwzv4kc57n9wh.jpg",
+        "description": "Durable stainless steel water bottle with a leak-proof cap and double-wall insulation.",
+        "price": 19.99,
+        "category": "Kitchen",
+        "ratings": 4.7,
+        "creationDateTime": "2024-08-12T14:00:00Z"
+    },
+    {
+        "productName": "Laptop Table",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/qpzfgfmj9cvmykme6sy7.jpg",
+        "description": "Elegant wooden laptop table with a modern design, perfect for any dining room.",
+        "price": 499.99,
+        "category": "Furniture",
+        "ratings": 4.8,
+        "creationDateTime": "2024-08-10T09:15:00Z"
+    },
+    {
+        "productName": "Mouse Pad",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/mhnqt1otb7elnf0naxcp.jpg",
+        "description": "Eco-friendly mouse pad mat with excellent grip and cushioning for comfortable mouse control.",
+        "price": 29.99,
+        "category": "Fitness",
+        "ratings": 4.6,
+        "creationDateTime": "2024-08-05T11:45:00Z"
+    },
+    {
+        "productName": "LED Desk Lamp",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/g71aacvmcrwaiwjhzsib.jpg",
+        "description": "Adjustable LED desk lamp with multiple brightness settings and a touch control panel.",
+        "price": 39.99,
+        "category": "Home Office",
+        "ratings": 4.4,
+        "creationDateTime": "2024-08-01T08:00:00Z"
+    },
+    {
+        "productName": "Smartphone Holder",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/wdj5jqm8cphyysryctlf.jpg",
+        "description": "Versatile smartphone holder for hands-free viewing and video calls.",
+        "price": 15.99,
+        "category": "Accessories",
+        "ratings": 4.2,
+        "creationDateTime": "2024-07-28T12:00:00Z"
+    },
+    {
+        "productName": "Electric Kettle",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/rgcjgdvbeifjo4l9ciiz.jpg",
+        "description": "Fast-boil electric kettle with auto shut-off and boil-dry protection.",
+        "price": 25.99,
+        "category": "Kitchen",
+        "ratings": 4.5,
+        "creationDateTime": "2024-07-25T09:30:00Z"
+    },
+    {
+        "productName": "Running Shoes",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/wlhjhrw8wlhe7eljpsvd.jpg",
+        "description": "Comfortable running shoes with superior cushioning and support.",
+        "price": 89.99,
+        "category": "Fitness",
+        "ratings": 4.7,
+        "creationDateTime": "2024-07-22T15:45:00Z"
+    },
+    {
+        "productName": "Ceramic Coffee Mug",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/ziegega6gbzxgtghfs3m.jpg",
+        "description": "Stylish ceramic coffee mug with a comfortable handle and modern design.",
+        "price": 9.99,
+        "category": "Kitchen",
+        "ratings": 4.3,
+        "creationDateTime": "2024-07-20T11:00:00Z"
+    },
+    {
+        "productName": "Fitness Tracker",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/xmjmfjywkpnsgcpurxbh.jpg",
+        "description": "Advanced fitness tracker with heart rate monitoring and GPS tracking.",
+        "price": 129.99,
+        "category": "Electronics",
+        "ratings": 4.6,
+        "creationDateTime": "2024-07-18T08:30:00Z"
+    },
+    {
+        "productName": "Desk Organizer",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/looflj1wteqw3cbubgsj.jpg",
+        "description": "Compact desk organizer with multiple compartments for stationery.",
+        "price": 18.99,
+        "category": "Home Office",
+        "ratings": 4.4,
+        "creationDateTime": "2024-07-15T13:45:00Z"
+    },
+    {
+        "productName": "Leather Wallet",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/wkalcadwyi58pt4hmhwc.jpg",
+        "description": "Premium leather wallet with multiple card slots and a sleek design.",
+        "price": 49.99,
+        "category": "Accessories",
+        "ratings": 4.5,
+        "creationDateTime": "2024-07-12T10:00:00Z"
+    },
+    {
+        "productName": "Portable Charger",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/qhxdwg4ijfc6vnngm7e6.jpg",
+        "description": "High-capacity portable charger for charging devices on the go.",
+        "price": 34.99,
+        "category": "Electronics",
+        "ratings": 4.6,
+        "creationDateTime": "2024-07-10T16:30:00Z"
+    },
+    {
+        "productName": "Bamboo Cutting Board",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692570/ElectronicProducts/zwcrb1jydmd71mvldyx5.jpg",
+        "description": "Durable bamboo cutting board with a smooth surface and juice groove.",
+        "price": 22.99,
+        "category": "Kitchen",
+        "ratings": 4.7,
+        "creationDateTime": "2024-07-08T09:15:00Z"
+    },
+    {
+        "productName": "Wireless Earbuds",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692570/ElectronicProducts/py6ro8y2g7rxnonfvcr3.jpg",
+        "description": "Compact wireless earbuds with high-quality sound and a charging case.",
+        "price": 59.99,
+        "category": "Electronics",
+        "ratings": 4.4,
+        "creationDateTime": "2024-07-05T14:00:00Z"
+    },
+    {
+        "productName": "Linen Throw Blanket",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692570/ElectronicProducts/iqvtoqzufbbyhf8j33gr.jpg",
+        "description": "Soft linen throw blanket, perfect for adding warmth and style to any room.",
+        "price": 29.99,
+        "category": "Home",
+        "ratings": 4.3,
+        "creationDateTime": "2024-07-03T11:30:00Z"
+    },
+    {
+        "productName": "Stainless Steel Cookware Set",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/ijzvldpc2rvarynfxbaf.jpg",
+        "description": "Premium stainless steel cookware set with non-stick coating and ergonomic handles.",
+        "price": 99.99,
+        "category": "Kitchen",
+        "ratings": 4.6,
+        "creationDateTime": "2024-07-01T09:00:00Z"
+    },
+    {
+        "productName": "Gaming Mouse",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692567/ElectronicProducts/vqgop1rgkphl9ailthrg.jpg",
+        "description": "High-performance gaming mouse with customizable buttons and RGB lighting.",
+        "price": 49.99,
+        "category": "Electronics",
+        "ratings": 4.7,
+        "creationDateTime": "2024-06-28T12:30:00Z"
+    },
+    {
+        "productName": "Indoor Plant Pot",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/hdefkkdathoikymthf1r.jpg",
+        "description": "Decorative indoor plant pot with a modern design, perfect for small plants.",
+        "price": 14.99,
+        "category": "Home",
+        "ratings": 4.5,
+        "creationDateTime": "2024-06-25T10:15:00Z"
+    },
+    {
+        "productName": "Electric Toothbrush",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/fdztupka5zcuhf0llnzz.jpg",
+        "description": "Rechargeable electric toothbrush with multiple brushing modes and a smart timer.",
+        "price": 39.99,
+        "category": "Personal Care",
+        "ratings": 4.8,
+        "creationDateTime": "2024-06-23T08:00:00Z"
+    },
+    {
+        "productName": "Wireless Charging Pad",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692568/ElectronicProducts/zazx0zfzqyyqn1m2xwsg.jpg",
+        "description": "Convenient wireless charging pad compatible with most smartphones.",
+        "price": 24.99,
+        "category": "Electronics",
+        "ratings": 4.4,
+        "creationDateTime": "2024-06-20T11:30:00Z"
+    },
+    {
+        "productName": "Adjustable Standing Desk",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/fbpcigzxtunmtgmg9k4x.jpg",
+        "description": "Ergonomic adjustable standing desk to improve workspace comfort.",
+        "price": 299.99,
+        "category": "Home Office",
+        "ratings": 4.6,
+        "creationDateTime": "2024-06-18T13:00:00Z"
+    },
+    {
+        "productName": "Bluetooth Speaker",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/hkyzqgaztllqmulguk9n.jpg",
+        "description": "Portable Bluetooth speaker with excellent sound quality and a durable build.",
+        "price": 89.99,
+        "category": "Electronics",
+        "ratings": 4.5,
+        "creationDateTime": "2024-06-15T15:30:00Z"
+    },
+    {
+        "productName": "Cordless Vacuum Cleaner",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692570/ElectronicProducts/ktgycwxvlcj4dxlf7vqa.jpg",
+        "description": "Efficient cordless vacuum cleaner with powerful suction and long battery life.",
+        "price": 159.99,
+        "category": "Home",
+        "ratings": 4.8,
+        "creationDateTime": "2024-06-12T10:00:00Z"
+    },
+    {
+        "productName": "Outdoor Grill",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692569/ElectronicProducts/ugbnvekyxl4re3mf96be.jpg",
+        "description": "Durable outdoor grill perfect for barbecues and outdoor cooking.",
+        "price": 299.99,
+        "category": "Outdoor",
+        "ratings": 4.7,
+        "creationDateTime": "2024-06-10T12:30:00Z"
+    },
+    {
+        "productName": "Portable Blender",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692570/ElectronicProducts/wkquv5ct8qyr3slj11nk.jpg",
+        "description": "Compact portable blender ideal for making smoothies on the go.",
+        "price": 34.99,
+        "category": "Kitchen",
+        "ratings": 4.5,
+        "creationDateTime": "2024-06-08T14:00:00Z"
+    },
+    {
+        "productName": "Smart Thermostat",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692570/ElectronicProducts/ephg0iajhzxnbmwb9iau.jpg",
+        "description": "Smart thermostat with remote control and energy-saving features.",
+        "price": 149.99,
+        "category": "Home",
+        "ratings": 4.6,
+        "creationDateTime": "2024-06-05T09:00:00Z"
+    },
+    {
+        "productName": "Camping Tent",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/l1lyprqfuwemxtzcuklz.jpg",
+        "description": "Spacious camping tent with easy setup and weather-resistant features.",
+        "price": 89.99,
+        "category": "Outdoor",
+        "ratings": 4.4,
+        "creationDateTime": "2024-06-03T11:30:00Z"
+    },
+    {
+        "productName": "Electric Grill",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/xiwyal0zcqu8izot0rjm.jpg",
+        "description": "Indoor electric grill with adjustable temperature settings and non-stick surface.",
+        "price": 119.99,
+        "category": "Kitchen",
+        "ratings": 4.5,
+        "creationDateTime": "2024-05-30T10:00:00Z"
+    },
+    {
+        "productName": "Smart Light Bulbs",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/hy2qbi1nhwpogx7kfyhm.jpg",
+        "description": "Set of smart light bulbs with adjustable colors and brightness, controlled via app.",
+        "price": 39.99,
+        "category": "Home",
+        "ratings": 4.6,
+        "creationDateTime": "2024-05-28T12:00:00Z"
+    },
+    {
+        "productName": "Portable Air Conditioner",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/l1kdt2blhnqlu7ypdnmz.jpg",
+        "description": "Compact portable air conditioner with adjustable cooling settings.",
+        "price": 229.99,
+        "category": "Home",
+        "ratings": 4.7,
+        "creationDateTime": "2024-05-25T08:30:00Z"
+    },
+    {
+        "productName": "Electric Bottle Opener",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/qt5c4owctpavnrzzchtn.jpg",
+        "description": "Automatic electric wine opener with a sleek design and easy operation.",
+        "price": 29.99,
+        "category": "Kitchen",
+        "ratings": 4.4,
+        "creationDateTime": "2024-05-22T10:00:00Z"
+    },
+    {
+        "productName": "Hiking Backpack",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/feu44ayysodwkc4e7lgq.jpg",
+        "description": "Durable hiking backpack with multiple compartments and ergonomic design.",
+        "price": 79.99,
+        "category": "Outdoor",
+        "ratings": 4.6,
+        "creationDateTime": "2024-05-20T14:00:00Z"
+    },
+    {
+        "productName": "Fitness Resistance Bands",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/cw9iegk3imvujlm70na2.jpg",
+        "description": "Set of fitness resistance bands for strength training and flexibility exercises.",
+        "price": 24.99,
+        "category": "Fitness",
+        "ratings": 4.5,
+        "creationDateTime": "2024-05-18T11:00:00Z"
+    },
+    {
+        "productName": "Luxury Bedding Set",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/dhd3urywb6ur2unejsij.jpg",
+        "description": "High-quality bedding set with soft fabric and elegant design.",
+        "price": 129.99,
+        "category": "Home",
+        "ratings": 4.7,
+        "creationDateTime": "2024-05-15T10:30:00Z"
+    },
+    {
+        "productName": "Digital Camera",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692571/ElectronicProducts/lq5gqc4wrqiivrjcnr9t.jpg",
+        "description": "High-resolution digital camera with advanced features for photography enthusiasts.",
+        "price": 399.99,
+        "category": "Electronics",
+        "ratings": 4.8,
+        "creationDateTime": "2024-05-12T08:00:00Z"
+    },
+    {
+        "productName": "Home Security Camera",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692572/ElectronicProducts/oda5winaiajhlis3umkj.jpg",
+        "description": "Wireless home security camera with night vision and motion detection.",
+        "price": 89.99,
+        "category": "Electronics",
+        "ratings": 4.5,
+        "creationDateTime": "2024-05-10T12:30:00Z"
+    },
+    {
+        "productName": "Portable Heater",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692572/ElectronicProducts/xg3vw6h1emy66l7zhclt.jpg",
+        "description": "Compact portable heater with adjustable temperature settings and energy-efficient design.",
+        "price": 59.99,
+        "category": "Home",
+        "ratings": 4.4,
+        "creationDateTime": "2024-05-05T09:30:00Z"
+    },
+    {
+        "productName": "Smart Lock",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692572/ElectronicProducts/zyogms2bojmid5mqgvkn.jpg",
+        "description": "Smart door lock with keyless entry and remote access features.",
+        "price": 149.99,
+        "category": "Home",
+        "ratings": 4.7,
+        "creationDateTime": "2024-05-02T10:00:00Z"
+    },
+    {
+        "productName": "Gaming Keyboard",
+        "productImage": "https://res.cloudinary.com/dfwmhlhyo/image/upload/v1723692572/ElectronicProducts/zap0yf7wjgqaqcbkssph.jpg",
+        "description": "Mechanical gaming keyboard with customizable RGB backlighting and programmable keys.",
+        "price": 99.99,
+        "category": "Electronics",
+        "ratings": 4.7,
+        "creationDateTime": "2024-04-25T10:30:00Z"
+    }
+]
