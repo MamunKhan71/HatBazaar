@@ -13,7 +13,8 @@ export default function HomePage() {
     const [filteredProducts, setFilteredProducts] = useState([])
     const [brands, setBrands] = useState([])
     const [selectedBrands, setSelectedBrands] = useState([])
-    const handleClick = (e) => {
+    const [selectedCategory, setSelectedCategory] = useState([])
+    const handleBrandClick = (e) => {
         const { value, checked } = e.target;
         let updatedSelectedBrands = [];
         if (checked) {
@@ -32,6 +33,23 @@ export default function HomePage() {
             setFilteredProducts(filtered)
         }
     }
+    const handleCategoryClick = (e) => {
+        const { value, checked } = e.target
+        let updatedCategory = []
+        if (checked) {
+            updatedCategory = [...selectedCategory, value]
+        } else {
+            updatedCategory = selectedCategory.filter(category => category !== value)
+        }
+        setSelectedCategory(updatedCategory)
+        if (updatedCategory.length === 0) {
+            setFilteredProducts(products)
+        } else {
+            const filtered = filteredProducts.filter(product => updatedCategory.includes(product.category))
+            setFilteredProducts(filtered)
+        }
+    }
+    console.log(selectedCategory);
     const filterBy = (type, sortType) => {
         if (type === "price") {
             if (sortType === 'htl') {
@@ -96,7 +114,7 @@ export default function HomePage() {
                                 {
                                     category?.map(category => (
                                         <li className='flex items-center gap-2'>
-                                            <input type="checkbox" className="checkbox checkbox-sm" />
+                                            <input type="checkbox" className="checkbox checkbox-sm" value={category} onClick={(e) => handleCategoryClick(e)} />
                                             <span className="label-text font-medium">{category}</span>
                                         </li>
                                     ))
@@ -112,7 +130,7 @@ export default function HomePage() {
                                 {
                                     brands?.map(brand => (
                                         <li className='flex items-center gap-2 font-medium'>
-                                            <input onChange={(e) => handleClick(e)} type="checkbox" className="checkbox" value={brand} />
+                                            <input onChange={(e) => handleBrandClick(e)} type="checkbox" className="checkbox" value={brand} />
                                             <span className="label-text">{brand}</span>
                                         </li>
                                     ))
