@@ -31,8 +31,16 @@ export default function HomePage() {
             );
             setFilteredProducts(filtered)
         }
-
-
+    }
+    const filterBy = (type) => {
+        console.log(type);
+        if (type === "price") {
+            const sortedProducts = [...filteredProducts].sort((a, b) => a.price - b.price)
+            setFilteredProducts(sortedProducts)
+        } else {
+            const sortedProducts = [...filteredProducts].sort((a, b) => new Date(a.creationDateTime) - new Date(b.creationDateTime))
+            setFilteredProducts(sortedProducts)
+        }
     }
     console.log(filteredProducts);
     useEffect(() => {
@@ -54,8 +62,8 @@ export default function HomePage() {
                 <details className="dropdown dropdown-end">
                     <summary className="btn m-1 rounded-none"><RxDropdownMenu /> Sort by</summary>
                     <ul className="menu dropdown-content bg-base-100 z-[1] w-52 p-2 rounded-none shadow font-semibold">
-                        <li><a><MdOutlineAttachMoney />Price</a></li>
-                        <li><a><TbCalendarCode />Date Added</a></li>
+                        <li><button onClick={() => filterBy('price')}><MdOutlineAttachMoney />Price</button></li>
+                        <li><button onClick={() => filterBy('date')}><TbCalendarCode />Date Added</button></li>
                     </ul>
                 </details>
             </div>
