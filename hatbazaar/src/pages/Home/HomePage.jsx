@@ -6,20 +6,47 @@ import { TbCalendarCode } from "react-icons/tb";
 import { BiFilter } from "react-icons/bi";
 import { TbBrandAbstract } from "react-icons/tb";
 import { BiCategoryAlt } from "react-icons/bi";
+import axios from 'axios';
 export default function HomePage() {
     const [products, setProducts] = useState([])
     const [category, setCategory] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
     const [brands, setBrands] = useState([])
+    const [selectedBrands, setSelectedBrands] = useState([])
+    const handleClick = (e) => {
+        const { value, checked } = e.target;
+        let updatedSelectedBrands = [];
+        if (checked) {
+            updatedSelectedBrands = [...selectedBrands, value]
+        } else {
+            updatedSelectedBrands = selectedBrands.filter((brand) => brand !== value);
+        }
+        setSelectedBrands(updatedSelectedBrands);
+
+        if (updatedSelectedBrands.length === 0) {
+            setFilteredProducts(products)
+        } else {
+            const filtered = products.filter((product) =>
+                updatedSelectedBrands.includes(product.brandName)
+            );
+            setFilteredProducts(filtered)
+        }
+
+
+    }
+    console.log(filteredProducts);
     useEffect(() => {
-        fetch('product.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-                setCategory([...new Set(products.map((product) => product.category))]);
-                setBrands([...new Set(products.map(product => product.brandName))])
+        axios.get('http://localhost:5000/products')
+            .then(res => {
+                setProducts(res.data)
+                setFilteredProducts(res.data)
             })
-    }, [products, products])
-    console.log(category);
+    }, [])
+    useEffect(() => {
+        setCategory([...new Set(products.map((product) => product.category))]);
+        setBrands([...new Set(products.map(product => product.brandName))])
+    }, [products])
+
     return (
         <div className='space-y-4'>
             <h1 className='text-center font-bold text-3xl'>Products</h1>
@@ -72,7 +99,7 @@ export default function HomePage() {
                                 {
                                     brands?.map(brand => (
                                         <li className='flex items-center gap-2 font-medium'>
-                                            <input type="checkbox" className="checkbox" />
+                                            <input onChange={(e) => handleClick(e)} type="checkbox" className="checkbox" value={brand} />
                                             <span className="label-text">{brand}</span>
                                         </li>
                                     ))
@@ -83,7 +110,7 @@ export default function HomePage() {
                 </div>
                 <div className='w-full h-full grid grid-cols-3 gap-6'>
                     {
-                        products?.map(product => (
+                        filteredProducts?.map(product => (
                             <div className="card bg-base-100 shadow-xl rounded-none">
                                 <figure className='relative'>
                                     <img className='h-96 object-cover w-full'
