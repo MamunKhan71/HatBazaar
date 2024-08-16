@@ -16,7 +16,7 @@ export default function SideFilterMenu({ brands, maxPrice, price, category, hand
                         onChange={handlePriceChange}
                         onMouseUp={handleMouseUp}
                         onTouchEnd={handleMouseUp}
-                        type="range"
+                        type="range" 
                         min={0}
                         max={maxPrice}
                         value={price}
