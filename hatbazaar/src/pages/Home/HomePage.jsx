@@ -26,6 +26,7 @@ export default function HomePage() {
     const [currentPage, setCurrentPage] = useState(0)
     const pages = [...Array(numberOfPages).keys()]
     const [loading, setLoading] = useState(true)
+    const [filterTrigger, setFilterTrigger] = useState(false);
     const handleBrandClick = (e) => {
         const { value, checked } = e.target;
         let updatedSelectedBrands = [];
@@ -67,12 +68,16 @@ export default function HomePage() {
             setFilteredProducts(sortedProducts)
         }
     }
-    const handlePrice = (e) => {
-        const newPrice = Number(e.target.value)
-        const finalPrice = newPrice + 25
-        setPrice(finalPrice)
+    const handlePriceChange = (e) => {
+        const newPrice = Number(e.target.value);
+        const finalPrice = newPrice + 25;
+        setPrice(finalPrice);
+    };
+
+    const handleMouseUp = () => {
+        // Call filterProducts only when the mouse is released
         filterProducts(selectedBrands, selectedCategory, price, search);
-    }
+    };
     const handleSearch = (e) => {
         const search = e.target.value
         setSearch(search)
@@ -85,8 +90,11 @@ export default function HomePage() {
             (categories.length === 0 || categories.includes(product.category)) &&
             product.productName.toLowerCase().includes(search.toLowerCase())
         );
-
-        setFilteredProducts(filtered);
+        axios.get(`https://hatbazaar.vercel.app/filtered-products?brands=${brands}&maxPrice=${maxPrice}&categories=${categories}&search=${search}&page=${currentPage}&size=${itemsPerPage}`)
+            .then(res => {
+                setFilteredProducts(res.data.result)
+                setItemsCount(res.data.totalDocuments)
+            })
     };
 
     console.log(search);
@@ -110,8 +118,13 @@ export default function HomePage() {
 
     console.log(itemsCount);
     useEffect(() => {
-        setCategory([...new Set(products.map((product) => product.category))]);
-        setBrands([...new Set(products.map(product => product.brandName))])
+        axios.get('https://hatbazaar.vercel.app/product-categories-brands')
+            .then(res => {
+                setCategory(res.data.categories)
+                setBrands(res.data.brands)
+            })
+        // setCategory([...new Set(products.map((product) => product.category))]);
+        // setBrands([...new Set(products.map(product => product.brandName))])
     }, [products])
 
 
@@ -158,7 +171,16 @@ export default function HomePage() {
                     <div className='bg-gray-50 p-4 space-y-2'>
                         <p className='inline-flex gap-2 items-center font-semibold'><MdOutlineAttachMoney />Price</p>
                         <div>
-                            <input onChange={(e) => handlePrice(e)} type="range" min={0} max={maxPrice} value={price} className="range range-xs" step="25" />
+                            <input
+                                onChange={handlePriceChange}
+                                onMouseUp={handleMouseUp}
+                                type="range"
+                                min={0}
+                                max={maxPrice}
+                                value={price}
+                                className="range range-xs"
+                                step="25"
+                            />
                             <div className="flex w-full justify-between px-2 text-xs">
                                 <span>0</span>
                                 <span>|</span>
