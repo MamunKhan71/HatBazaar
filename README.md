@@ -51,4 +51,4 @@ This is a full-stack web application built using the MERN stack (MongoDB, Expres
    npm init
 5. **Run the Server:**
    ```bash
-   npm start
+   npm run dev
