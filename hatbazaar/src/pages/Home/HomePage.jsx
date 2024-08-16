@@ -105,6 +105,17 @@ export default function HomePage() {
         setBrands([...new Set(products.map(product => product.brandName))])
     }, [products])
 
+    const handlePrevious = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const handleNext = () => {
+        if (currentPage < pages.length - 1) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
+    console.log(currentPage);
     return (
         <div className='space-y-4'>
             <h1 className='mt-12 text-center font-bold text-3xl'>Products</h1>
@@ -221,11 +232,11 @@ export default function HomePage() {
             </div>
             <div className='flex w-full items-center justify-end pt-12'>
                 <div className="join">
-                    <button className="join-item btn">«</button>
+                    <button onClick={handlePrevious} className="join-item btn">«</button>
                     {
                         pages?.map(page => <button className="join-item btn">{page + 1}</button>)
                     }
-                    <button className="join-item btn">»</button>
+                    <button onClick={handleNext} className="join-item btn">»</button>
                 </div>
             </div>
         </div>
