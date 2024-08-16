@@ -91,12 +91,12 @@ export default function HomePage() {
     console.log(search);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/count')
+        axios.get('https://hatbazaar.vercel.app/count')
             .then(res => setItemsCount(res.data.result))
     }, [])
     
     useEffect(() => {
-        axios.get(`http://localhost:5000/products?page=${currentPage}&size=${itemsPerPage}`)
+        axios.get(`https://hatbazaar.vercel.app/products?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
                 setProducts(res.data)
                 setFilteredProducts(res.data)
