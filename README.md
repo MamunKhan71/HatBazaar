@@ -1,4 +1,4 @@
-﻿# HatBazaar-Server
+﻿# HatBazaar
 
 This is a full-stack web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) that provides a single-page interface for users to search, filter, categorize, sort, and paginate through a list of products. The application also includes authentication features using Firebase.
 
