@@ -20,6 +20,11 @@ export default function HomePage() {
     const [price, setPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(0)
     const [search, setSearch] = useState("")
+    const [itemsPerPage, setItemsPerPage] = useState(10)
+    const [itemsCount, setItemsCount] = useState(0)
+    const numberOfPages = Math.ceil(itemsCount / itemsPerPage)
+    const [currentPage, setCurrentPage] = useState(0)
+    const pages = [...Array(numberOfPages).keys()]
     const handleBrandClick = (e) => {
         const { value, checked } = e.target;
         let updatedSelectedBrands = [];
@@ -31,7 +36,7 @@ export default function HomePage() {
         setSelectedBrands(updatedSelectedBrands);
         filterProducts(updatedSelectedBrands, selectedCategory, maxPrice, search);
     };
-
+    console.log(pages);
     const handleCategoryClick = (e) => {
         const { value, checked } = e.target;
         let updatedCategory = [];
@@ -85,15 +90,16 @@ export default function HomePage() {
 
     console.log(search);
     useEffect(() => {
-        axios.get('http://localhost:5000/products')
+        axios.get(`http://localhost:5000/products?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
                 setProducts(res.data)
                 setFilteredProducts(res.data)
                 setMaxPrice(Math.max(...res.data.map(result => result.price)))
+                setItemsCount(res.data.length)
             })
     }, [])
 
-    console.log(price);
+    console.log(itemsCount);
     useEffect(() => {
         setCategory([...new Set(products.map((product) => product.category))]);
         setBrands([...new Set(products.map(product => product.brandName))])
@@ -187,7 +193,7 @@ export default function HomePage() {
                                 <div className="card-body p-4">
                                     <div className='flex items-center justify-between'>
                                         <h2 className="text-xl font-bold">{product.productName}</h2>
-                                        <h2 className="text-sm font-bold inline-flex gap-2 items-center"><FaStar className='text-yellow-400'/>{product.ratings}</h2>
+                                        <h2 className="text-sm font-bold inline-flex gap-2 items-center"><FaStar className='text-yellow-400' />{product.ratings}</h2>
                                     </div>
                                     <p className=' truncate'>{product.description}</p>
                                     <div className='flex justify-between items-center'>
@@ -211,6 +217,15 @@ export default function HomePage() {
                             </div>
                         ))
                     }
+                </div>
+            </div>
+            <div className='flex w-full items-center justify-end pt-12'>
+                <div className="join">
+                    <button className="join-item btn">«</button>
+                    {
+                        pages?.map(page => <button className="join-item btn">{page + 1}</button>)
+                    }
+                    <button className="join-item btn">»</button>
                 </div>
             </div>
         </div>
