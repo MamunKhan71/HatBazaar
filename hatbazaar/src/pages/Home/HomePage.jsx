@@ -99,8 +99,8 @@ export default function HomePage() {
 
     return (
         <div className='space-y-4'>
-            <h1 className='text-center font-bold text-3xl'>Products</h1>
-            <div className='w-full flex gap-5 justify-end items-center'>
+            <h1 className='mt-12 text-center font-bold text-3xl'>Products</h1>
+            <div className='w-full flex flex-wrap gap-5 justify-center lg:justify-end items-center'>
                 <label className="input bg-base-200 flex items-center gap-2 rounded-none">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -118,13 +118,13 @@ export default function HomePage() {
                     <summary className="btn m-1 rounded-none"><RxDropdownMenu /> Sort by</summary>
                     <ul className="menu dropdown-content bg-base-100 z-[1] w-52 p-2 rounded-none shadow font-semibold">
                         <li><button onClick={() => filterBy('price', 'htl')}><MdOutlineAttachMoney />High to Low</button></li>
-                        <li><button onClick={() => filterBy('date', 'lth')}><TbCalendarCode />Low to High</button></li>
+                        <li><button onClick={() => filterBy('price', 'lth')}><TbCalendarCode />Low to High</button></li>
                     </ul>
                 </details>
                 <button className='btn rounded-none' onClick={() => filterBy('date')}><TbCalendarCode />Date Added</button>
             </div>
-            <div className='flex gap-5 pt-12'>
-                <div className='w-96 p-4 space-y-4'>
+            <div className='flex flex-col lg:flex-row gap-5 pt-12'>
+                <div className='w-full lg:w-96 lg:p-4 space-y-4'>
                     <h1 className='inline-flex gap-2 items-center font-semibold '><BiFilter />Filter by</h1>
                     <div className='bg-gray-50 p-4 space-y-2'>
                         <p className='inline-flex gap-2 items-center font-semibold'><MdOutlineAttachMoney />Price</p>
@@ -172,7 +172,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-                <div className='w-full h-full grid grid-cols-3 gap-6 animate__animated animate__fadeIn'>
+                <div className='w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate__animated animate__fadeIn'>
                     {
                         filteredProducts?.map(product => (
                             <div className="card bg-base-100 shadow-xl rounded-none">
@@ -182,8 +182,11 @@ export default function HomePage() {
                                         alt="Shoes" />
                                     <span className='absolute bottom-4 left-4 bg-black text-white py-2 px-4 text-xs'>{product.category}</span>
                                 </figure>
-                                <div className="card-body">
-                                    <h2 className="text-xl font-bold">{product.productName}</h2>
+                                <div className="card-body p-4">
+                                    <div className='flex items-center justify-between'>
+                                        <h2 className="text-xl font-bold">{product.productName}</h2>
+                                        <h2 className="text-sm font-bold">⭐{product.ratings}</h2>
+                                    </div>
                                     <p className=' truncate'>{product.description}</p>
                                     <p className='font-semibold'>$ {product.price}</p>
                                     <div className="card-actions justify-start">
