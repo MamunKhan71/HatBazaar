@@ -17,6 +17,7 @@ export default function HomePage() {
     const [selectedCategory, setSelectedCategory] = useState([])
     const [price, setPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(0)
+    const [search, setSearch] = useState("")
     const handleBrandClick = (e) => {
         const { value, checked } = e.target;
         let updatedSelectedBrands = [];
@@ -26,7 +27,7 @@ export default function HomePage() {
             updatedSelectedBrands = selectedBrands.filter((brand) => brand !== value);
         }
         setSelectedBrands(updatedSelectedBrands);
-        filterProducts(updatedSelectedBrands, selectedCategory, maxPrice);
+        filterProducts(updatedSelectedBrands, selectedCategory, maxPrice, search);
     };
 
     const handleCategoryClick = (e) => {
@@ -40,7 +41,7 @@ export default function HomePage() {
         }
 
         setSelectedCategory(updatedCategory);
-        filterProducts(selectedBrands, updatedCategory, maxPrice);
+        filterProducts(selectedBrands, updatedCategory, maxPrice, search);
     };
 
     console.log(selectedCategory);
@@ -58,22 +59,29 @@ export default function HomePage() {
             setFilteredProducts(sortedProducts)
         }
     }
-    console.log(filteredProducts);
     const handlePrice = (e) => {
         const newPrice = Number(e.target.value)
         const finalPrice = newPrice + 25
         setPrice(finalPrice)
-        filterProducts(selectedBrands, selectedCategory, price);
+        filterProducts(selectedBrands, selectedCategory, price, search);
     }
-    const filterProducts = (brands, categories, maxPrice) => {
+    const handleSearch = (e) => {
+        const search = e.target.value
+        setSearch(search)
+        filterProducts(selectedBrands, selectedCategory, price, search);
+    }
+    const filterProducts = (brands, categories, maxPrice, search) => {
         const filtered = products.filter(product =>
             (brands.length === 0 || brands.includes(product.brandName)) &&
+            (maxPrice === 0 || product.price <= maxPrice) &&
             (categories.length === 0 || categories.includes(product.category)) &&
-            (maxPrice === 0 || product.price <= maxPrice)
+            product.productName.toLowerCase().includes(search.toLowerCase())
         );
 
         setFilteredProducts(filtered);
     };
+
+    console.log(search);
     useEffect(() => {
         axios.get('http://localhost:5000/products')
             .then(res => {
@@ -104,7 +112,7 @@ export default function HomePage() {
                             d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                             clipRule="evenodd" />
                     </svg>
-                    <input type="text" className="grow" placeholder="Search..." />
+                    <input onChange={e => handleSearch(e)} type="text" className="grow" placeholder="Search..." />
                 </label>
                 <details className="dropdown dropdown-end">
                     <summary className="btn m-1 rounded-none"><RxDropdownMenu /> Sort by</summary>
