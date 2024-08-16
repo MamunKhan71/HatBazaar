@@ -89,21 +89,27 @@ export default function HomePage() {
     };
 
     console.log(search);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/count')
+            .then(res => setItemsCount(res.data.result))
+    }, [])
+    
     useEffect(() => {
         axios.get(`http://localhost:5000/products?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
                 setProducts(res.data)
                 setFilteredProducts(res.data)
                 setMaxPrice(Math.max(...res.data.map(result => result.price)))
-                setItemsCount(res.data.length)
             })
-    }, [])
+    }, [currentPage])
 
     console.log(itemsCount);
     useEffect(() => {
         setCategory([...new Set(products.map((product) => product.category))]);
         setBrands([...new Set(products.map(product => product.brandName))])
     }, [products])
+
 
     const handlePrevious = () => {
         if (currentPage > 0) {
