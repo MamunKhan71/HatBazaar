@@ -6,7 +6,9 @@ import { TbCalendarCode } from "react-icons/tb";
 import { BiFilter } from "react-icons/bi";
 import { TbBrandAbstract } from "react-icons/tb";
 import { BiCategoryAlt } from "react-icons/bi";
+import { FaRegCalendarAlt } from "react-icons/fa";
 import 'animate.css';
+import { FaStar } from "react-icons/fa";
 import axios from 'axios';
 export default function HomePage() {
     const [products, setProducts] = useState([])
@@ -185,10 +187,20 @@ export default function HomePage() {
                                 <div className="card-body p-4">
                                     <div className='flex items-center justify-between'>
                                         <h2 className="text-xl font-bold">{product.productName}</h2>
-                                        <h2 className="text-sm font-bold">⭐{product.ratings}</h2>
+                                        <h2 className="text-sm font-bold inline-flex gap-2 items-center"><FaStar className='text-yellow-400'/>{product.ratings}</h2>
                                     </div>
                                     <p className=' truncate'>{product.description}</p>
-                                    <p className='font-semibold'>$ {product.price}</p>
+                                    <div className='flex justify-between items-center'>
+                                        <p className='font-semibold'>$ {product.price}</p>
+                                        <span className="font-semibold text-right inline-flex gap-2 items-center">
+                                            <FaRegCalendarAlt />
+                                            {new Date(product.creationDateTime).toLocaleDateString('en-US', {
+                                                month: 'short',
+                                                day: 'numeric',
+                                                year: 'numeric',
+                                            })}
+                                        </span>
+                                    </div>
                                     <div className="card-actions justify-start">
                                         <a href="#_" class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-black rounded-none hover:bg-black text-white group w-full">
                                             <span class="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
