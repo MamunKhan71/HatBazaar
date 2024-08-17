@@ -21,7 +21,7 @@ export default function SideFilterMenu({ brands, maxPrice, price, category, hand
                         max={maxPrice}
                         value={price}
                         className="range range-xs"
-                        step="25"
+                        step="5"
                     />
                     <div className="flex w-full justify-between px-2 text-xs">
                         <span>0</span>

@@ -65,7 +65,7 @@ export default function HomePage() {
     // To handle the price change
     const handlePriceChange = (e) => {
         const newPrice = Number(e.target.value);
-        const finalPrice = newPrice + 25;
+        const finalPrice = newPrice + 5;
         setPrice(finalPrice);
     };
 
@@ -89,7 +89,7 @@ export default function HomePage() {
             (categories.length === 0 || categories.includes(product.category)) &&
             product.productName.toLowerCase().includes(search.toLowerCase())
         );
-        axios.get(`https://hatbazaar.vercel.app/filtered-products?brands=${brands}&maxPrice=${maxPrice}&categories=${categories}&search=${search}&page=${currentPage}&size=${itemsPerPage}`)
+        axios.get(`https://hatbazaar.vercel.app/filtered-products?brands=${brands}&maxPrice=${price}&categories=${categories}&search=${search}&page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
                 setFilteredProducts(res.data.result)
                 setItemsCount(res.data.totalDocuments)
@@ -111,7 +111,7 @@ export default function HomePage() {
             .then(res => {
                 setProducts(res.data)
                 setFilteredProducts(res.data)
-                setMaxPrice(Math.max(...res.data.map(result => result.price)))
+                setMaxPrice(Math.max(...res.data.map(result => result.price + 5)))
                 setLoading(false)
             })
     }, [currentPage])
